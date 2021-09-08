@@ -19,4 +19,4 @@ jobs:
         python-version: 3.8
 
     - name: run
-      run: python update.py
+      run: python upload.py
