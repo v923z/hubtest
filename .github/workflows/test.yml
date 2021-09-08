@@ -1,0 +1,17 @@
+name: Build CI
+
+on:
+  pull_request
+
+jobs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      run: echo "$GITHUB_CONTEXT"
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+        
+    - name: Run upload
+      run: python upload.py
