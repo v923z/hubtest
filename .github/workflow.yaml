@@ -1,0 +1,22 @@
+name: Build CI
+
+on:
+  push:
+  pull_request:
+    paths:
+    - 'code/**'
+    - 'tests/**'
+    - '.github/workflows/**'
+    - 'build*.sh'
+    - 'requirements*.txt'
+
+jobs:
+  update:
+    steps:
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: run
+      run: python update.py
